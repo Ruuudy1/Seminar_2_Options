@@ -1,0 +1,7 @@
+*THIS STRATEGY WAS IMPLEMENTED IN A JUPYTER NOTEBOOK FOR FASTER RUNTIME, USES YF FINANCE LIBARY*
+
+Leveraged - Buy_N_Hold LEAPs (1 year from expiration on) $SPY + Monthly Covered Calls Delta <= .25
+the delta is not built into YF libary so we are buying deep in the money calls an they will have a high delta
+
+contact me if any questions:
+LinkedIn: Rudy_Osuna

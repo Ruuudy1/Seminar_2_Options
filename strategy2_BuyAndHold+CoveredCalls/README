@@ -1,0 +1,26 @@
+*THIS CODE MUST BE RUN ON THE QUANTCONNECT PLATFORM TO USE ITS LIBARIES*
+
+Strategy:
+
+Buy 100 shares of SPY at the start.
+Every month, sell a covered call (1-month expiration, delta ≤ 0.25).
+Collect the premium and reinvest it by buying more shares of SPY.
+Once the number of shares reaches an additional 100, start selling 2 covered calls.
+Implement a stop-loss to manage risk on the covered calls.
+
+
+Key points:
+
+### Reinvest Premium:
+
+In the OnOrderEvent method, the premium from selling options is calculated and used to buy more SPY shares.
+This ensures that the premium received from selling covered calls is reinvested to accumulate more shares of SPY.
+
+### Dynamic Covered Calls:
+
+The number of shares owned is calculated using self.Portfolio[self.spy].Quantity. The number of covered calls to sell is determined by dividing this number by 100 (num_calls = spy_shares // 100).
+This way, if you have 200 shares, you'll sell 2 covered calls, and so on.
+
+### Monthly Execution:
+
+The code keeps track of when to sell the next round of covered calls using the variable self.next_call_date and updates it each month.

@@ -1,0 +1,8 @@
+*THIS CODE MUST BE RUN ON THE QUANTCONNECT PLATFORM TO USE ITS LIBARIES*
+
+This is the base case example for our seminar:
+
+# Buy 100 shares of SPY at the start of the backtest.
+# Hold these shares for the entire backtest period (40 years).
+# At the end of the 40 years, calculate the portfolio value and compare it with the initial investment.
+## Display the dollar return and percentage gain.
